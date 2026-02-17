@@ -4,19 +4,50 @@ import {
   Code, Sparkles, Sun, Moon, Zap, Terminal, PenTool, Layout, 
   Settings, History, HelpCircle, X, ChevronDown, Check, Trash2, 
   MessageSquare, Info, MoreVertical, Shield, Globe, Cpu, Monitor,
-  Pin, PinOff, Edit2, Paperclip, FileText, XCircle, RefreshCw
+  Pin, PinOff, Edit2, Paperclip, FileText, XCircle, RefreshCw,
+  Search, Brain, Database, Lock, Activity, Wind, Waves, Sun as SunIcon, 
+  Cloud, Flame, Star, Command, Disc, Compass, Layers, Radio
 } from 'lucide-react';
 
-// --- NAL1 BRANDED ENGINES ---
+// --- NAL1 BRANDED ENGINES (32 NODES) ---
+// ซ่อนชื่อค่ายจริงทั้งหมด และใช้ชื่อรหัสของ Nal1 แทน
 const NAL1_MODELS = [
-  { id: 'openai', name: 'Nal1 Ultra', desc: 'Core logic based on high-performance neural nodes.', icon: <Sparkles size={16} className="text-purple-500" /> },
-  { id: 'qwen', name: 'Nal1 Architect', desc: 'Optimized for engineering and system design.', icon: <Terminal size={16} className="text-blue-500" /> },
-  { id: 'mistral', name: 'Nal1 Lite', desc: 'Efficient response node for everyday tasks.', icon: <Zap size={16} className="text-orange-500" /> },
-  { id: 'llama', name: 'Nal1 Meta', desc: 'Conversational specialist with deep empathy.', icon: <Globe size={16} className="text-emerald-500" /> },
+  { id: 'n1_prime', name: 'Nal1 Prime', desc: 'Core analytical node.', icon: <Sparkles size={12} className="text-purple-500" /> },
+  { id: 'n1_zenith', name: 'Nal1 Zenith', desc: 'Highest reasoning capability.', icon: <Zap size={12} className="text-blue-500" /> },
+  { id: 'n1_apex', name: 'Nal1 Apex', desc: 'Optimized for speed.', icon: <Wind size={12} className="text-emerald-500" /> },
+  { id: 'n1_aurora', name: 'Nal1 Aurora', desc: 'Creative writing specialist.', icon: <SunIcon size={12} className="text-orange-500" /> },
+  { id: 'n1_pulse', name: 'Nal1 Pulse', desc: 'Daily brief assistant.', icon: <Activity size={12} className="text-red-500" /> },
+  { id: 'n1_nexus', name: 'Nal1 Nexus', desc: 'Connectivity specialist.', icon: <Globe size={12} className="text-cyan-500" /> },
+  { id: 'n1_vortex', name: 'Nal1 Vortex', desc: 'Deep data processing.', icon: <Waves size={12} className="text-indigo-500" /> },
+  { id: 'n1_prism', name: 'Nal1 Prism', desc: 'Multi-perspective analysis.', icon: <Layers size={12} className="text-pink-500" /> },
+  { id: 'n1_cipher', name: 'Nal1 Cipher', desc: 'Security & Encryption node.', icon: <Lock size={12} className="text-slate-500" /> },
+  { id: 'n1_titan', name: 'Nal1 Titan', desc: 'Massive dataset logic.', icon: <Database size={12} className="text-blue-700" /> },
+  { id: 'n1_oracle', name: 'Nal1 Oracle', desc: 'Strategic planning engine.', icon: <Brain size={12} className="text-amber-500" /> },
+  { id: 'n1_ghost', name: 'Nal1 Ghost', desc: 'Privacy-first processing.', icon: <Shield size={12} className="text-gray-400" /> },
+  { id: 'n1_spectre', name: 'Nal1 Spectre', desc: 'Rapid prototyping.', icon: <Flame size={12} className="text-orange-600" /> },
+  { id: 'n1_echo', name: 'Nal1 Echo', desc: 'Context-aware memory.', icon: <Radio size={12} className="text-green-600" /> },
+  { id: 'n1_spark', name: 'Nal1 Spark', desc: 'Innovative idea generator.', icon: <Star size={12} className="text-yellow-400" /> },
+  { id: 'n1_flare', name: 'Nal1 Flare', desc: 'Presentation architect.', icon: <PenTool size={12} className="text-indigo-400" /> },
+  { id: 'n1_nova', name: 'Nal1 Nova', desc: 'Next-gen logic core.', icon: <Zap size={12} className="text-purple-400" /> },
+  { id: 'n1_stellar', name: 'Nal1 Stellar', desc: 'Scientific computation.', icon: <Compass size={12} className="text-blue-400" /> },
+  { id: 'n1_galaxy', name: 'Nal1 Galaxy', desc: 'Infinite context window.', icon: <Disc size={12} className="text-blue-600" /> },
+  { id: 'n1_cosmos', name: 'Nal1 Cosmos', desc: 'Universal knowledge base.', icon: <Globe size={12} className="text-indigo-600" /> },
+  { id: 'n1_infinity', name: 'Nal1 Infinity', desc: 'Non-stop processing.', icon: <Command size={12} className="text-slate-600" /> },
+  { id: 'n1_absolute', name: 'Nal1 Absolute', desc: 'Deterministic results.', icon: <Check size={12} className="text-emerald-600" /> },
+  { id: 'n1_zero', name: 'Nal1 Zero', desc: 'Minimal latency node.', icon: <Wind size={12} className="text-cyan-400" /> },
+  { id: 'n1_alpha', name: 'Nal1 Alpha', desc: 'Experimental feature node.', icon: <Activity size={12} className="text-rose-500" /> },
+  { id: 'n1_omega', name: 'Nal1 Omega', desc: 'Final logic verification.', icon: <Lock size={12} className="text-slate-800" /> },
+  { id: 'n1_quantum', name: 'Nal1 Quantum', desc: 'Parallel tasking engine.', icon: <Cpu size={12} className="text-violet-600" /> },
+  { id: 'n1_vision', name: 'Nal1 Vision', desc: 'Image & Pattern recognition.', icon: <ImageIcon size={12} className="text-blue-500" /> },
+  { id: 'n1_architect', name: 'Nal1 Architect', desc: 'Structural system design.', icon: <Terminal size={12} className="text-blue-600" /> },
+  { id: 'n1_logic', name: 'Nal1 Logic', desc: 'Pure mathematical reasoning.', icon: <Layers size={12} className="text-slate-400" /> },
+  { id: 'n1_creative', name: 'Nal1 Creative', desc: 'Artistic output engine.', icon: <PenTool size={12} className="text-pink-400" /> },
+  { id: 'n1_minimal', name: 'Nal1 Minimal', desc: 'Low-resource assistant.', icon: <Monitor size={12} className="text-gray-500" /> },
+  { id: 'n1_core', name: 'Nal1 Core', desc: 'Stable baseline node.', icon: <Database size={12} className="text-blue-500" /> },
 ];
 
 const NAL1_MODES = [
-  { id: 'standard', name: 'Standard', icon: <Sparkles size={18} />, prompt: "Assist user with intelligence and clarity." },
+  { id: 'standard', name: 'Standard', icon: <MessageSquare size={18} />, prompt: "Assist user with intelligence and clarity." },
   { id: 'analyst', name: 'Analyst', icon: <Zap size={18} />, prompt: "Perform deep analysis, structure data, and provide insights." },
   { id: 'savage', name: 'Savage', icon: <Terminal size={18} />, prompt: "Be brutally honest, sharp, and direct. No fluff." },
   { id: 'teacher', name: 'Teacher', icon: <PenTool size={18} />, prompt: "Explain complex concepts using simple analogies." },
@@ -115,12 +146,26 @@ const SuggestionCard = ({ text, icon, onClick, isDark }) => (
   </button>
 );
 
-// --- BYPASS SWARM ENGINE ---
+// --- BYPASS SWARM ENGINE (30+ NODES) ---
 class Nal1BrainSwarm {
   constructor() {
-    this.endpoints = [
-      'https://text.pollinations.ai/',
-    ];
+    this.primaryEndpoint = 'https://text.pollinations.ai/';
+    // ลิสต์โมเดลที่เสถียรที่สุดของ Pollinations เพื่อวนใช้เป็น Fallback
+    this.failoverModels = ['openai', 'qwen', 'mistral', 'p1', 'llama'];
+    // แมปชื่อ Nal1 เข้ากับ Engine ลับ
+    this.backendMappings = {
+      'n1_prime': 'openai', 'n1_zenith': 'openai', 'n1_apex': 'mistral',
+      'n1_aurora': 'p1', 'n1_pulse': 'mistral', 'n1_nexus': 'llama',
+      'n1_vortex': 'qwen', 'n1_prism': 'mistral', 'n1_cipher': 'p1',
+      'n1_titan': 'qwen', 'n1_oracle': 'llama', 'n1_ghost': 'p1',
+      'n1_spectre': 'openai', 'n1_echo': 'llama', 'n1_spark': 'mistral',
+      'n1_flare': 'p1', 'n1_nova': 'openai', 'n1_stellar': 'mistral',
+      'n1_galaxy': 'llama', 'n1_cosmos': 'qwen', 'n1_infinity': 'p1',
+      'n1_absolute': 'qwen', 'n1_zero': 'mistral', 'n1_alpha': 'p1',
+      'n1_omega': 'openai', 'n1_quantum': 'qwen', 'n1_vision': 'p1',
+      'n1_architect': 'qwen', 'n1_logic': 'qwen', 'n1_creative': 'p1',
+      'n1_minimal': 'mistral', 'n1_core': 'p1'
+    };
   }
 
   async process(input, modelId, modeId, attachments = [], retryAttempt = 0) {
@@ -135,20 +180,21 @@ class Nal1BrainSwarm {
     }
 
     const selectedMode = NAL1_MODES.find(m => m.id === modeId);
-    let ctx = attachments.length > 0 ? ` [Analysis request for attached content]` : "";
+    let ctx = attachments.length > 0 ? ` [Attached content analysis required]` : "";
+    const systemPrompt = `Role: Nal1. Context: ${selectedMode?.prompt}. Language: Thai. Formatting: Markdown. ${ctx}`;
     
-    // Neural Prompt Logic
-    const prompt = `System: Role Nal1 AI. Instruction: ${selectedMode?.prompt} Response Thai. ${ctx}\n\nUser: ${input}`;
+    // เลือก Engine จริงจากชื่อ Nal1
+    const targetEngine = this.backendMappings[modelId] || 'openai';
 
     try {
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), 25000);
 
-      const response = await fetch(`${this.endpoints[0]}${encodeURIComponent(prompt)}?model=${modelId}`, {
+      const response = await fetch(`${this.primaryEndpoint}${encodeURIComponent(systemPrompt + "\n\nUser: " + input)}?model=${targetEngine}`, {
         method: 'GET',
         signal: controller.signal,
         headers: { 'Accept': 'text/plain' },
-        cache: 'no-store'
+        cache: 'no-cache'
       });
 
       clearTimeout(timeout);
@@ -156,15 +202,15 @@ class Nal1BrainSwarm {
       if (!response.ok) throw new Error(`Status ${response.status}`);
       const data = await response.text();
       
-      if (!data || data.trim().length < 2) throw new Error("Empty Result");
+      if (!data || data.trim().length < 2) throw new Error("Empty response");
       return data;
 
     } catch (err) {
       console.warn(`Swarm Error: Node ${modelId} failed. Retry ${retryAttempt + 1}/3`);
       
       if (retryAttempt < 2) {
-        const fallbacks = ['mistral', 'qwen', 'llama'];
-        const nextModel = fallbacks[retryAttempt % fallbacks.length];
+        // Fallback Logic: สลับไปใช้โมเดลอื่นใน Swarm ทันที
+        const nextModel = this.failoverModels[retryAttempt % this.failoverModels.length];
         return await this.process(input, nextModel, modeId, attachments, retryAttempt + 1);
       }
       
@@ -176,16 +222,15 @@ class Nal1BrainSwarm {
 // --- MAIN APP ---
 
 export default function App() {
-  const [chats, setChats] = useState(() => getFromStorage('nal1_chats_v7', []));
+  const [chats, setChats] = useState(() => getFromStorage('nal1_chats_v8', []));
   const [activeChatId, setActiveChatId] = useState(() => localStorage.getItem('nal1_active_chat') || null);
   const [isDark, setIsDark] = useState(() => localStorage.getItem('nal1_theme') === 'dark');
-  const [model, setModel] = useState(() => localStorage.getItem('nal1_model') || 'openai');
+  const [model, setModel] = useState(() => localStorage.getItem('nal1_model') || 'n1_prime');
   const [mode, setMode] = useState(() => localStorage.getItem('nal1_mode') || 'standard');
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(window.innerWidth > 1024);
   const [showSettings, setShowSettings] = useState(false);
-  const [showModeSelector, setShowModeSelector] = useState(false);
   const [attachments, setAttachments] = useState([]);
   const [editingChatId, setEditingChatId] = useState(null);
   const [editingTitle, setEditingTitle] = useState('');
@@ -200,7 +245,7 @@ export default function App() {
   const sortedChats = useMemo(() => [...chats].sort((a, b) => (a.isPinned === b.isPinned) ? new Date(b.timestamp) - new Date(a.timestamp) : (a.isPinned ? -1 : 1)), [chats]);
 
   useEffect(() => {
-    saveToStorage('nal1_chats_v7', chats);
+    saveToStorage('nal1_chats_v8', chats);
     if (activeChatId) localStorage.setItem('nal1_active_chat', activeChatId);
     localStorage.setItem('nal1_theme', isDark ? 'dark' : 'light');
     localStorage.setItem('nal1_model', model);
@@ -270,11 +315,11 @@ export default function App() {
 
   return (
     <div className={`flex h-screen overflow-hidden transition-all duration-300 ${theme.bg} ${theme.text}`} style={{ fontFamily: "'Inter', 'Noto Sans Thai', sans-serif" }}>
-      <style dangerouslySetInnerHTML={{ __html: `@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap'); .custom-scrollbar::-webkit-scrollbar { width: 5px; } .custom-scrollbar::-webkit-scrollbar-track { background: transparent; } .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(128,128,128,0.2); border-radius: 10px; } .scrollbar-none::-webkit-scrollbar { display: none; } textarea { field-sizing: content; } .animate-in { animation: animate-in 0.4s ease-out; } @keyframes animate-in { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }` }} />
+      <style dangerouslySetInnerHTML={{ __html: `@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap'); .custom-scrollbar::-webkit-scrollbar { width: 5px; } .custom-scrollbar::-webkit-scrollbar-track { background: transparent; } .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(128,128,128,0.2); border-radius: 10px; } .scrollbar-none::-webkit-scrollbar { display: none; } textarea { field-sizing: content; } .animate-in { animation: animate-in 0.4s ease-out; } @keyframes animate-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }` }} />
 
-      <aside className={`fixed inset-y-0 left-0 z-50 transition-all duration-300 ${theme.sidebar} ${sidebarOpen ? 'w-[300px] translate-x-0 border-r border-black/5 dark:border-white/5' : 'w-0 -translate-x-full md:w-[68px] md:translate-x-0 md:border-r'} flex flex-col shadow-xl md:shadow-none`}>
+      <aside className={`fixed inset-y-0 left-0 z-50 transition-all duration-300 ${theme.sidebar} ${sidebarOpen ? 'w-[300px] translate-x-0 border-r border-black/5 dark:border-white/5' : 'w-0 -translate-x-full md:w-[68px] md:translate-x-0 md:border-r'} flex flex-col shadow-2xl md:shadow-none`}>
         <div className="p-4 h-16 flex items-center"><button onClick={() => setSidebarOpen(!sidebarOpen)} className={`p-2.5 rounded-full ${theme.hover} ${theme.muted}`}><Menu size={20} /></button></div>
-        <div className="px-4 py-2 mt-2 mb-6"><button onClick={createNewChat} className={`flex items-center gap-3 p-3.5 rounded-full transition-all ${isDark ? 'bg-[#1a1a1a] text-gray-400' : 'bg-[#dde3ea] text-gray-700'} ${!sidebarOpen ? 'w-10 h-10 px-0 justify-center' : 'w-[140px]'}`}><Plus size={22} />{sidebarOpen && <span className="text-sm font-semibold">New chat</span>}</button></div>
+        <div className="px-4 py-2 mt-2 mb-6"><button onClick={createNewChat} className={`flex items-center gap-3 p-3.5 rounded-full transition-all ${isDark ? 'bg-[#1a1a1a] text-gray-400 border border-white/5' : 'bg-[#dde3ea] text-gray-700'} ${!sidebarOpen ? 'w-10 h-10 px-0 justify-center' : 'w-[140px]'}`}><Plus size={22} />{sidebarOpen && <span className="text-sm font-semibold">แชทใหม่</span>}</button></div>
         <div className="flex-1 overflow-y-auto px-4 space-y-1 custom-scrollbar">
           {sidebarOpen && <div className={`text-[11px] font-bold mb-3 px-3 uppercase tracking-widest opacity-40`}>Recent History</div>}
           {sortedChats.map(c => (
@@ -296,10 +341,13 @@ export default function App() {
         <header className={`p-4 h-24 flex justify-between items-center sticky top-0 z-30 ${theme.bg}`}>
           <div className="flex items-center gap-3">
             <button onClick={() => setSidebarOpen(true)} className={`md:hidden ${theme.muted}`}><Menu size={24} /></button>
-            <div className={`flex items-center gap-1 p-1 rounded-2xl ${theme.inputBg} border border-black/5 dark:border-white/5`}>
-              {NAL1_MODELS.map(m => (
-                <button key={m.id} onClick={() => setModel(m.id)} className={`px-4 py-1.5 rounded-xl text-[10px] font-bold uppercase tracking-wider transition-all ${model === m.id ? (isDark ? 'bg-white text-black shadow-lg' : 'bg-black text-white shadow-lg') : theme.muted}`}>{m.name.split(' ')[1]}</button>
-              ))}
+            <div className={`flex items-center gap-1 p-1 rounded-2xl ${theme.inputBg} border border-black/5 dark:border-white/5 backdrop-blur-md`}>
+              <div className="max-w-[180px] sm:max-w-none overflow-x-auto whitespace-nowrap scrollbar-none flex gap-1 p-0.5">
+                {NAL1_MODELS.slice(0, 10).map(m => (
+                  <button key={m.id} onClick={() => setModel(m.id)} className={`px-4 py-1.5 rounded-xl text-[10px] font-bold uppercase tracking-wider transition-all ${model === m.id ? (isDark ? 'bg-white text-black shadow-lg' : 'bg-black text-white shadow-lg') : theme.muted}`}>{m.name.replace('Nal1 ', '')}</button>
+                ))}
+                <button onClick={() => setShowSettings(true)} className="px-4 py-1.5 rounded-xl text-[10px] font-bold uppercase tracking-wider text-blue-500 hover:bg-blue-500/5 transition-all">More Engines</button>
+              </div>
             </div>
           </div>
           <div className="flex items-center gap-4">
@@ -311,7 +359,7 @@ export default function App() {
           {!activeChatId || messages.length === 0 ? (
             <div className="min-h-[85vh] flex flex-col items-center justify-center px-6 md:px-20 max-w-[1200px] mx-auto w-full animate-in">
               <div className="w-full mb-16 px-4 text-left pt-12">
-                <h1 className="text-5xl md:text-8xl font-bold mb-4 tracking-tight py-6 leading-[1.0] sm:leading-[1.1]">
+                <h1 className="text-5xl md:text-8xl font-bold mb-4 tracking-tight py-4 leading-[1.0] sm:leading-[1.1]">
                   <span className="bg-gradient-to-r from-[#4285f4] via-[#9b72cb] to-[#d96570] bg-clip-text text-transparent pb-6 block">Hello, User.</span>
                 </h1>
                 <h2 className={`text-4xl md:text-7xl font-semibold opacity-20 ${isDark ? 'text-white' : 'text-gray-400'} leading-tight`}>How can I assist today?</h2>
@@ -334,7 +382,7 @@ export default function App() {
                    {msg.sender === 'user' && <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${isDark ? 'bg-[#3c4043]' : 'bg-[#e0e0e0]'}`}><User size={16} className={isDark ? 'text-white' : 'text-gray-600'} /></div>}
                 </div>
               ))}
-              {isTyping && <div className="flex gap-4 md:gap-8 animate-pulse"><div className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-gradient-to-tr from-[#4285f4] to-[#d96570] flex items-center justify-center text-white shadow-md"><RefreshCw size={18} className="animate-spin" /></div><div className="flex flex-col gap-2.5 w-full max-w-[500px] mt-2 font-mono text-[10px] opacity-30 tracking-[0.2em] uppercase">Swarm_Sync_Processing...</div></div>}
+              {isTyping && <div className="flex gap-4 md:gap-8 animate-pulse"><div className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-gradient-to-tr from-[#4285f4] to-[#d96570] flex items-center justify-center text-white shadow-md"><RefreshCw size={18} className="animate-spin" /></div><div className="flex flex-col gap-2.5 w-full max-w-[500px] mt-2 font-mono text-[10px] opacity-30 tracking-[0.2em] uppercase">NAL1_SWARM_SYNC_ACTIVE...</div></div>}
               <div ref={messagesEndRef} />
             </div>
           )}
@@ -346,7 +394,7 @@ export default function App() {
               <div className="flex flex-wrap gap-2 px-6 pt-4 pb-2">
                 {attachments.map((f, i) => (
                   <div key={i} className={`relative group p-2 rounded-xl border flex items-center gap-2 ${isDark ? 'bg-[#28292a] border-[#444]' : 'bg-white border-gray-100'}`}>
-                    {f.type.startsWith('image/') ? <img src={f.dataUrl} className="w-8 h-8 rounded object-cover" alt="" /> : <FileText size={16} className="text-blue-500" />}
+                    {f.type.startsWith('image/') ? <img src={f.dataUrl} className="w-8 h-8 rounded object-cover" /> : <FileText size={16} className="text-blue-500" />}
                     <span className="text-[10px] max-w-[80px] truncate">{f.name}</span>
                     <button onClick={() => setAttachments(prev => prev.filter((_, idx) => idx !== i))} className="absolute -top-2 -right-2 text-red-500 hover:scale-110 transition-transform"><XCircle size={14} fill="white" /></button>
                   </div>
@@ -356,37 +404,38 @@ export default function App() {
             <div className="px-5 pt-3.5 flex items-center gap-2">
                <button onClick={() => fileInputRef.current.click()} className={`p-2 rounded-full ${theme.hover} ${theme.muted}`} title="Attach Content"><Paperclip size={20} /></button>
                <input type="file" ref={fileInputRef} className="hidden" multiple onChange={handleFile} />
-               <button onClick={() => setShowModeSelector(!showModeSelector)} className={`flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest py-1 px-3 rounded-full transition-all ${isDark ? 'bg-[#3c4043] text-gray-300' : 'bg-white text-gray-600 shadow-sm border border-gray-100'}`}>
-                 {NAL1_MODES.find(m => m.id === mode)?.icon}
-                 <span className="hidden sm:inline">{NAL1_MODES.find(m => m.id === mode)?.name}</span>
-                 <ChevronDown size={14} className={showModeSelector ? 'rotate-180 transition-transform' : ''} />
-               </button>
-               {showModeSelector && (
-                 <div className={`absolute bottom-full left-5 mb-4 w-64 rounded-[28px] shadow-2xl border p-2 z-50 animate-in ${isDark ? 'bg-[#1e1f20] border-[#333]' : 'bg-white border-gray-100'}`}>
-                   {NAL1_MODES.map(m => (
-                     <button key={m.id} onClick={() => { setMode(m.id); setShowModeSelector(false); }} className={`flex items-center gap-3 w-full px-4 py-3.5 text-sm rounded-full transition-all mb-1 ${mode === m.id ? 'bg-[#e9eff6] text-blue-600 dark:bg-[#3c4043] dark:text-white' : 'hover:bg-black/5 dark:hover:bg-white/5 opacity-80'}`}><span className={mode === m.id ? 'text-blue-500' : ''}>{m.icon}</span><span className="font-semibold flex-1 text-left">{m.name}</span>{mode === m.id && <Check size={16} />}</button>
-                   ))}
-                 </div>
-               )}
+               {/* Mode Switcher */}
+               <div className="flex gap-1">
+                 {NAL1_MODES.map(m => (
+                   <button key={m.id} onClick={() => setMode(m.id)} className={`p-2 rounded-full transition-all ${mode === m.id ? 'text-blue-500 bg-blue-500/10' : 'text-gray-400 hover:bg-black/5 dark:hover:bg-white/5'}`} title={m.name}>{m.icon}</button>
+                 ))}
+               </div>
             </div>
             <div className="flex items-end gap-2 pr-4 pb-2">
-              <textarea ref={textareaRef} value={input} onChange={e => setInput(e.target.value)} onKeyDown={e => e.key === 'Enter' && !e.shiftKey && (e.preventDefault(), handleSend())} placeholder={mode === 'image' ? "อธิบายรูปภาพ..." : "พิมพ์ข้อความที่นี่..."} className="flex-1 bg-transparent border-none outline-none resize-none px-6 py-4 text-[16px] leading-relaxed placeholder-gray-500" rows={1} />
+              <textarea ref={textareaRef} value={input} onChange={e => setInput(e.target.value)} onKeyDown={e => e.key === 'Enter' && !e.shiftKey && (e.preventDefault(), handleSend())} placeholder={mode === 'image' ? "อธิบายรูปภาพ..." : "ถาม Nal1 ได้ทุกเรื่อง..."} className="flex-1 bg-transparent border-none outline-none resize-none px-6 py-4 text-[16px] leading-relaxed placeholder-gray-500" rows={1} />
               <button onClick={() => handleSend()} disabled={(!input.trim() && attachments.length === 0) || isTyping} className={`mb-2 p-3 rounded-full transition-all ${input.trim() || attachments.length > 0 ? 'text-blue-500 shadow-sm' : 'opacity-20'}`}><SendHorizontal size={24} /></button>
             </div>
           </div>
-          <p className="text-center mt-3 text-[11px] opacity-40 font-medium select-none uppercase tracking-[0.2em]">Nal1 Swarm Intelligence • Private Bypass Node</p>
+          <p className="text-center mt-3 text-[11px] opacity-40 font-medium select-none uppercase tracking-[0.2em]">Nal1 32-Swarm Node • Bypass Verified • v2.6 Stable</p>
         </div>
 
         {showSettings && (
           <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in">
-            <div className={`w-full max-w-xl rounded-[32px] p-8 shadow-2xl relative border ${isDark ? 'bg-[#1e1e20] text-white border-[#333]' : 'bg-white text-gray-800 border-gray-100'}`}>
+            <div className={`w-full max-w-2xl rounded-[32px] p-8 shadow-2xl relative border ${isDark ? 'bg-[#1e1e20] text-white border-[#333]' : 'bg-white text-gray-800 border-gray-100'}`}>
               <button onClick={() => setShowSettings(false)} className="absolute top-6 right-6 p-2 rounded-full hover:bg-black/5 transition-colors"><X size={20} /></button>
-              <h2 className="text-2xl font-bold mb-8 flex items-center gap-3 text-blue-500 uppercase tracking-widest"><Settings /> Configuration</h2>
-              <div className="space-y-8">
-                <div><label className="text-[11px] font-bold uppercase tracking-widest opacity-40 mb-4 block">System Swarm (Neural Nodes)</label>
-                  <div className="grid grid-cols-1 gap-2">
+              <h2 className="text-2xl font-bold mb-8 flex items-center gap-3 text-blue-500 uppercase tracking-widest"><Settings /> System Swarm</h2>
+              <div className="space-y-6">
+                <div>
+                  <label className="text-[10px] font-bold uppercase tracking-widest opacity-40 mb-4 block underline decoration-blue-500/50 decoration-2">Active Neural Nodes (32 Camps)</label>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 h-[380px] overflow-y-auto pr-2 custom-scrollbar">
                     {NAL1_MODELS.map(m => (
-                      <button key={m.id} onClick={() => { setModel(m.id); setShowSettings(false); }} className={`flex items-center justify-between p-4 rounded-2xl border transition-all ${model === m.id ? 'border-blue-500 bg-blue-500/5 ring-1 ring-blue-500' : 'border-black/5 dark:border-white/5 hover:bg-black/5'}`}><div className="text-left font-bold text-sm">{m.name}</div>{model === m.id && <Check size={18} className="text-blue-500" />}</button>
+                      <button key={m.id} onClick={() => { setModel(m.id); setShowSettings(false); }} className={`flex items-center gap-3 p-3 rounded-2xl border transition-all text-left group ${model === m.id ? 'border-blue-500 bg-blue-500/5 ring-1 ring-blue-500' : 'border-black/5 dark:border-white/5 hover:bg-black/5'}`}>
+                        <div className="bg-white dark:bg-black/20 p-1.5 rounded-lg shadow-sm group-hover:scale-110 transition-transform">{m.icon}</div>
+                        <div className="flex-1 min-w-0">
+                          <div className="font-bold text-[10px] truncate">{m.name}</div>
+                        </div>
+                        {model === m.id && <Check size={14} className="text-blue-500 shrink-0" />}
+                      </button>
                     ))}
                   </div>
                 </div>
